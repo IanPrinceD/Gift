@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="style.css">
+ <title>Gift for you</title>
+</head>
+
+<body>
+ <div class="red">
+ <div class ="green">
+  <h1 id="pressMe"></h1>
+  <img src="" alt="" id="image1">
+  <audio id="audio1" src="../Audio/Christmas bells.mp3" controls="controls" loop="true" hidden="true"></audio>
+  <audio id="audio2" src="../Audio/screams.mp3" controls="controls" hidden="true"></audio>
+  <button onclick="pressBtn()" id="btn">Press Me!</button>
+ </div>
+ </div>
+ <script>
+  let pressAgain = false;
+
+  function pressBtn() {
+   let header = document.getElementById("pressMe");
+   let image1 = document.getElementById("image1");
+   let audio1 = document.getElementById("audio1");
+   let audio2 = document.getElementById("audio2");
+
+   if (!pressAgain) {
+    header.innerHTML = "Press the button";
+    image1.src = "../Image/giphy.gif";
+    audio1.play();
+   } else {
+    header.innerHTML = "Press the button again";
+    image1.src = "../Image/horror image.png";
+    audio1.pause();
+    audio1.currentTime = 0;
+    audio2.play();
+   }
+
+   pressAgain = !pressAgain;
+  }
+ </script>
+</body>
+
+</html>
